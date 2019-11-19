@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoenicia", "Phoenicia\Phoenicia.csproj", "{F713686D-44D0-4A1A-AE8E-71A75107E98A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{AB9DAFED-8BF7-4387-9599-154F4A6F8D27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{F713686D-44D0-4A1A-AE8E-71A75107E98A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F713686D-44D0-4A1A-AE8E-71A75107E98A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F713686D-44D0-4A1A-AE8E-71A75107E98A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB9DAFED-8BF7-4387-9599-154F4A6F8D27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB9DAFED-8BF7-4387-9599-154F4A6F8D27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB9DAFED-8BF7-4387-9599-154F4A6F8D27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB9DAFED-8BF7-4387-9599-154F4A6F8D27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
