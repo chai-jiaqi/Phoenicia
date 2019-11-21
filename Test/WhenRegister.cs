@@ -1,31 +1,28 @@
 using System.Net;
 using System.Net.Http;
+using System.Text;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Newtonsoft.Json;
+using Phoenicia;
 using Xunit;
 
 namespace Test
 {
     public class WhenRegister
     {
-        private const string ApiBaseUrl = "http://localhost:5000";
-        
         [Fact]
         public async void should_successfully_register_account_if_username_is_new()
         {
-            var httpClient = new HttpClient();
+            var factory = new WebApplicationFactory<Startup>();
+            var httpClient = factory.CreateClient();
             
-            var apiResponse = await httpClient.GetAsync($"{ApiBaseUrl}/register");
- 
-            Assert.Equal(HttpStatusCode.OK, apiResponse.StatusCode);
-        }
+            var user = new UserForRegister {Name = "name"};
+            var stringUser = JsonConvert.SerializeObject(user);
 
-        [Fact]
-        public async void should_return_bad_request_if_username_duplicate()
-        {
-            var httpClient = new HttpClient();
-            
-            var apiResponse = await httpClient.GetAsync($"{ApiBaseUrl}/register");
- 
-            Assert.Equal(HttpStatusCode.BadRequest, apiResponse.StatusCode);
+            var apiResponse = await httpClient.PostAsync("/api/users/register",
+                new StringContent(stringUser, Encoding.UTF8, "application/json"));
+
+            Assert.Equal(HttpStatusCode.Created, apiResponse.StatusCode);
         }
     }
 }
